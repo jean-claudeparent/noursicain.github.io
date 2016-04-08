@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>JCAssertion.exe</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="noursicain..css">
+ </head>
+<body>
+<h1>JCAssertion.exe</h1>
+<p>JCAssertion.exe est le programme utilisé pour évaluer
+les fichiers XML d'assertions. Le programme peut à la fois
+se comporter comme un programme console, c'est à dire accepter des arguments
+en ligne de commande et retourner de l'information
+à la console, et aussi présenter une interface utilisateur.
+
+<p>Usage:
+<p>JCAssertion.exe /FA:"nomdufichierdassertion.xml" [/FV:"Nomdufichierdevariables.xml"]
+<p>
+<dl>
+<dt>/FA:</dt>
+<dd>Donne le nom du fichier d'assertions qui sera évalué. Le chemin complet doit être donné
+    pour être sûr du bon fonctionnement. Mettre des guillemets au début et à la fin
+    si la structure de fichiers comporte des répertoires avec
+    des blancs ou d'autres caractères spéciaux dans les noms.
+Argument obligatoire.
+</dd>
+<dt>/FV:</dt>
+<dd>Donne le nom du fichier contenant les variables et leurs valeurs qui pourrons être utilisées
+    lorsque le fichier d'assertion sera  évalué. Le chemin complet doit être donné
+    pour être sûr du bon fonctionnement. Mettre des guillemets au début et à la fin
+    si la structure de fichiers comporte des répertoires avec
+    des blancs ou d'autres caractères spéciaux dans les noms.</dd>
+
+</dl>
+<p>
+Code retourné au système d'exploitation selon la situation:
+<Table>
+    <TR>
+        <TD>0</TD><TD>
+        Le programme a bien fonctionné et toutes les assertions sont vraies.
+        </TD>
+    </TR>
+    <TR>
+    <TD>1</TD><TD>
+        Le programme a bien fonctionné mais au moins une assertion est fausse.
+    </TD>
+    </TR>
+    <TR>
+    <TD>77</TD><TD>
+        Le programme a été fermé par l'utilisateur avant qu'il ait fini d'évaluer les assertions'.
+    </TD>
+    </TR>
+    <TR>
+    <TD>99</TD><TD>
+        Le programme a rencontré une erreur ou les arguments spécifiés en ligne de commande
+        sont incorrects.
+    </TD>
+    </TR>
+
+
+
+</Table>
+
+
+
+
+</body>
+</html>
