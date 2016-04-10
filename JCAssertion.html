@@ -17,7 +17,8 @@ en ligne de commande et retourner de l'information
 à la console, et aussi présenter une interface utilisateur.
 
 <p>Usage:
-<p>JCAssertion.exe /FA:"nomdufichierdassertion.xml" [/FV:"Nomdufichierdevariables.xml"]
+<p>JCAssertion.exe /FA:"nomdufichierdassertion.xml" [/FV:"Nomdufichierdevariables.xml"] [/J:"Nomdufichierdejournal.txt"]
+[/AV]
 <p>
 <dl>
 <dt>/FA:</dt>
@@ -33,6 +34,26 @@ Argument obligatoire.
     pour être sûr du bon fonctionnement. Mettre des guillemets au début et à la fin
     si la structure de fichiers comporte des répertoires avec
     des blancs ou d'autres caractères spéciaux dans les noms.</dd>
+
+<dt>/J:</dt>
+<dd>Donne le nom du fichier de journal où sera emregistré les résultats
+    de l'évaluation des assertions. Le chemin complet doit être donné
+    pour être sûr du bon fonctionnement. Mettre des guillemets au début et à la fin
+    si la structure de fichiers comporte des répertoires avec
+    des blancs ou d'autres caractères spéciaux dans les noms.
+    Si cet argument n'est pas spécifié, un nom par défaut
+    sera déduit du nom de fichier d'assertion mais ce journal
+    par défaut ne sera pas aussi complet que celui spécifié par
+    l'argument J.'''
+</dd>
+
+<dt>/AV</dt>
+<dd> JCAssertion avertira l'utilisateur des erreurs
+    ou des assertions fausses avec un popup.
+    
+</dd>
+
+
 
 </dl>
 <p>
