@@ -26,20 +26,44 @@
         <TH>Description</TH>
     </TR>
     <TR>
-        <TD>Nom</TD>
-        <TD>Obligatoire</TD>
+        <TD>Contient</TD>
+        <TD>Oui (2)</TD>
+        <TD>Texte qui doit être trouvé dans le fichier pour que l&#39;assertion ssoit vraie.</TD>
+    </TR>
+    <TR>
+        <TD>Fichier</TD>
+        <TD>Oui</TD>
+        <TD>Description</TD>
+    </TR>
+    <TR>
+        <TD>MessageEchec</TD>
+        <TD>Non</TD>
+        <TD>Description</TD>
+    </TR>
+    <TR>
+        <TD>NeContientPas</TD>
+        <TD>Oui (2)</TD>
         <TD>Description</TD>
     </TR>
 </TABLE>
 
 <h2>Particularités</h2>
-    <p>Si une erreur est rencontrée, comme par exemple si un fichier inexistant
+    <ol>
+        <li>Si une erreur est rencontrée, comme par exemple si un fichier inexistant
         est spécifié, l'assertion est considérée comme fausse.
-    </p>
-    <p>Il doit y avoir au moins
+        </li>
+         <li>Il doit y avoir au moins
         une balise &lt;Conttient&gt;  
-        ou une balise &lt;NeConttientPas&gt;.
-    </p>
+        ou une balise &lt;NeConttientPas&gt;.</li>
+        <li>Il peut t avoir plusieurs balises
+            &lt;Conttient&gt; et &lt;NeConttientPas&gt;
+            L'assertion est vraie si tous les textes spécifiées
+            par les balises &lt;Conttient&gt; sont dans le fichier
+            et si tous les textes spécifiés par les balises &lt;NeConttientPas&gt;
+            ne sont pas trouvés dans le fichier .</li>
+    </ol>
+    
+    
 <h2>Exemple</h2>
     <p>
     </p>
