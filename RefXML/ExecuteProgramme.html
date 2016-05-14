@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>ExecuteProgramme</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>ExecuteProgramme</h1>
+<h2>Description</h2>
+<p>ExecuteProgramme permet de lancer un programme
+    dîsponible pour s'exécuter  sur l'ordinateur où s'exécute
+    JCAssertion.exe. JCAssertion va attendre tant que
+    ce programme ne se terminera pas et vérifiera
+    le code de retour que ce programme envoie au système d'exploitation. 0 est
+    le code de retour qui est considéré comme un succès. Tous les autres
+    codes sont considérés comme un
+    échec de l'assertion.
+    </p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Arguments</TD>
+        <TD>Non</TD>
+        <TD>Arguments à passer au programme exécuter selon la méthode de &quot;ligne de commande&quot;.</TD>
+    </TR>
+    <TR>
+        <TD>MessageEchec</TD>
+        <TD>Non</TD>
+        <TD>Message personalisé qui sera utilisé pour signler que l&#39;assertion et fausse.</TD>
+    </TR>
+    <TR>
+        <TD>Programme</TD>
+        <TD>Obl</TD>
+        <TD>Nom du programme à exécuter. Le nom doit contenir le chemin ou alors le programme doit être accessible à partir de tous les répertoires. (selon la variable d&#39;environnement PATH)</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>
+        &nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Lancer un programme qui attend 30 secondes. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;ExecuteProgramme&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Programme&gt;{{VariableContenantLeChemin}}Attendre.exe&lt;/Programme&gt;<br>
+    &nbsp;&nbsp;&lt;Arguments&gt;30&lt;/Arguments&gt;<br>
+    &nbsp;&nbsp;&lt;MessageEchec&gt;Le programme attendre a mal fonctionné.&lt;/MessageEchec&gt;<br>
+    
+  &nbsp;&lt;/Assertion&gt;<br>
+    </p>
+</body>
+</html>
