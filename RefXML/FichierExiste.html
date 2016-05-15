@@ -11,7 +11,10 @@
 <body>
 <h1>FichierExiste</h1>
 <h2>Description</h2>
-<p>FichierExiste ...
+<p>FichierExiste vérifie si un fichier existe.
+    Pour les version 1.0.4 et moins  de JCAssertion un répertoire mis comme nom de fichier  retourne
+    toujours un échec. Dans la version 1.0.5 JCAssertion
+    vérifie braiment que le répertoire existe.
     </p>
 <h2>Balises</h2>
     
@@ -22,14 +25,27 @@
         <TH>Description</TH>
     </TR>
     <TR>
-        <TD>Nom</TD>
-        <TD>Obligatoire</TD>
-        <TD>Description</TD>
+        <TD>Fichier</TD>
+        <TD>Oui</TD>
+        <TD>Nom du fichier dont il faut tester l'existence. Le chemin complet devrait être spécifié pour obtenir
+            des résultats constants.
+        </TD>
+    </TR>
+    <TR>
+        <TD>MessageEchec</TD>
+        <TD>Non</TD>
+        <TD>Message personalisé qui sera utilisé pour signaler que l&#39;assertion et fausse.</TD>
     </TR>
 </TABLE>
 
 <h2>Exemple</h2>
-    <p>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Vérifier que le fichier de données existe. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;FichierExiste&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Fichier&gt;{{VariableContenantLeChemin}}FichierDeDonnees.xml&lt;/Fichier&gt;<br>
+    &nbsp;&nbsp;&lt;MessageEchec&gt;Le fichier de données n&#39;existe pas.&lt;/MessageEchec&gt;<br>
+    
+  &nbsp;&lt;/Assertion&gt;<br>
     </p>
 </body>
 </html>
