@@ -11,7 +11,14 @@
 <body>
 <h1>SubstituerVariablesFichier</h1>
 <h2>Description</h2>
-<p>SubstituerVariablesFichier ...
+<p>SubstituerVariablesFichier lit un fichier texte modèle
+    qui contient des balises de variables. Le fichier modèle
+    est lu, les balises de variabkes sont remplacées
+    par la veleur des variables et le résultat est écrit
+    dans le fichier de sortie. Le fichier modèle n'est
+    pas modifié. S'il manque une valeur de variable
+    ou si une erreur est rencontrée l'assertion est
+    considérée comme fausse. 
     
     </p>
 <h2>Balises</h2>
@@ -23,14 +30,30 @@
         <TH>Description</TH>
     </TR>
     <TR>
-        <TD>Nom</TD>
-        <TD>Obligatoire</TD>
-        <TD>Description</TD>
+        <TD>FichierModele</TD>
+        <TD>Oui</TD>
+        <TD>Le nom du fichier de modèle, avec son chemin d&#39;accès.</TD>
+    </TR>
+    <TR>
+        <TD>FichierSortie</TD>
+        <TD>Oui</TD>
+        <TD>Le nom du fichier de sortie, avec son chemin d&#39;accès.</TD>
+    </TR>
+    <TR>
+        <TD>FichierVariables</TD>
+        <TD>Oui</TD>
+        <TD>Le nom du fichier de bariables, avec son chemin d&#39;accès.</TD>
     </TR>
 </TABLE>
 
 <h2>Exemple</h2>
-    <p>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Créer un fichier sql pour un logon en particuler. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;SubstituerVariablesFichier&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;FichierModele&gt;{{Chemin}}\ModeleSQL.sql&lt;/FichierModele&gt;<br>
+    &nbsp;&nbsp;&lt;FichierSortie&gt;{{Chemin}}\{{User}}monSQL.sql\&lt;/FichierSortie&gt;<br>
+    &nbsp;&nbsp;&lt;FichierVariables&gt;{{Chemin}}\Var.xml&lt;/FichierVariables&gt;<br>
+        &lt;/Assertion&gt;<br>
     </p>
 </body>
 </html>
