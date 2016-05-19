@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>MAJVariables</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>MAJVariables</h1>
+<h2>Description</h2>
+<p>MAJVariables
+    permet de changer la valeur d&#39;une variables identifiée par une clé. 
+    Ce changement se fait dans le fichier de variable si JCAssertion.exe utilise un fichier de variables, 
+    sinon le changement est fait uniqueent dans la table des variables en mémoire.
+    </p>
+    
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Cle</TD>
+        <TD>Oui</TD>
+        <TD>Clé identifiant la variable dont la valeur doit être changée. Si la variable n&#39;existe pas elle sera créée.</TD>
+    </TR>
+    <TR>
+        <TD>Valeur</TD>
+        <TD>Oui</TD>
+        <TD>La nouvelle valeur de la variable.</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Changer la valeur de la variable &quot;bin&quot;. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;MAJVariables&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Cle&gt;bin&lt;/Cle&gt;<br>
+    &nbsp;&nbsp;&lt;Valeur&gt;c:\app&lt;/Valeur&gt;<br>
+        &nbsp;&nbsp;&lt;/Assertion&gt;<br>
+    </p>
+</body>
+</html>
