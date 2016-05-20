@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>La notion de balise de variables</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>La notion de balise de variables</h1>
+
+<p>Les balises XML du fichier d'assertion
+    peuvent contenir des balises idemtifiant
+    des variables. Lorsque ces balises XML sont évaluées, les balises de variables 
+    sont remplacées par leur valeur. Ceci fonctionne aussi pour n'importe quel
+    fichier texte qui est traité par l'assertion SubstituerVariablesFichier.&nbsp; Les balises de variables sont spécifiées en les entourant de doubles accolades, par exemple {{User}} définit la variable User</p>
+
+
+<h2>Exemple</h2>
+    <p>Voici un fichier XML de variables, il contient deux
+        variables, Chemin et User.&nbsp; Il est à noter que le fichier contient une troisiène variable qui est crée automatiquement par JCAssertion soit JCA.FichierDeVariables.</p>
+    <TABLE>
+        <TR>
+            <TD>
+&LT;?xml version="1.0" encoding="UTF-8"?&GT;<BR>
+&LT;ListeDeVariables&GT;<BR>
+  &nbsp;&nbsp;&LT;Variable Cle="User" Valeur="JCAUser" /&GT;<BR>
+  &nbsp;&nbsp;&LT;Variable Cle="Chemin" Valeur="D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\" /&GT;<BR>
+  &nbsp;&nbsp;&LT;Variable Cle="JCA.FichierDeVariables" Valeur="D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\Var.xml" /&GT;<BR>
+
+  &LT;/&LT;ListeDeVariables&GT;<BR>
+</TD>
+        </TR>
+
+        </TABLE>
+    <p>Voici un fichier de modèle SQL qui sera utilisés pour créer un script SQL Oracle 11g pour créer un environnement de test pour&nbsp; un user.
+    </p>
+    <TABLE>
+        <TR>
+            <TD>
+create or replace table {{User}}.JCAUser(User VARCHAR2(20) NOT NULL PRIMARY KEY,<BR>
+                NOM VARCHAR2(100));
+                <br />
+                insert into JCAUser values({{User}}&#39;&#39;,&#39;Nom test&#39;);<br />
+                commit;</TD>
+        </TR>
+
+        </TABLE>
+
+    <p>Voici un fichier d&#39;assertion qui transformera le modèle SQL en script SQL.
+    </p>
+    <TABLE>
+        <TR>
+            <TD>
+                &nbsp;&lt;Assertion&gt;<br />
+                &nbsp;&nbsp;&lt;Description&gt;Créer un fichier sql pour un logon en particuler. &lt;/Description&gt;<br />
+                &nbsp;&nbsp;&lt;Type&gt;SubstituerVariablesFichier&lt;/Type&gt;<br />
+                &nbsp;&nbsp;&lt;FichierModele&gt;{{Chemin}}\ModeleSQL.sql&lt;/FichierModele&gt;<br />
+                &nbsp;&nbsp;&lt;FichierSortie&gt;{{Chemin}}\{{User}}monSQL.sql\&lt;/FichierSortie&gt;<br />
+                &nbsp;&nbsp;&lt;FichierVariables&gt;{{JCA.FichierDeVariables}\&lt;/FichierVariables&gt;<br />
+                &lt;/Assertion&gt;</TD>
+        </TR>
+
+        </TABLE>
+
+    <p>Quand JCAssertion exécute les assertions une copie du fichier d&#39;assertions est lu en mémoire et les variables sont remplacées par leur valeur en méoire ce qui donne:
+    </p>
+    <TABLE>
+        <TR>
+            <TD>
+                &nbsp;&lt;Assertion&gt;<br />
+                &nbsp;&nbsp;&lt;Description&gt;Créer un fichier sql pour un logon en particuler. &lt;/Description&gt;<br />
+                &nbsp;&nbsp;&lt;Type&gt;SubstituerVariablesFichier&lt;/Type&gt;<br />
+                &nbsp;&nbsp;&lt;FichierModele&gt;ModeleSQL.sql&lt;/FichierModele&gt;<br />
+                &nbsp;&nbsp;&lt;FichierSortie&gt;{{Chemin}}\{{User}}monSQL.sql\&lt;/FichierSortie&gt;<br />
+                &nbsp;&nbsp;&lt;FichierVariables&gt;{{JCA.FichierDeVariables}\&lt;/FichierVariables&gt;<br />
+                &lt;/Assertion&gt;</TD>
+        </TR>
+
+        </TABLE>
+</body>
+</html>
