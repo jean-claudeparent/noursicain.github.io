@@ -13,17 +13,29 @@
 <p>Pour exécuter les essais de JCAssertion pour la partie accès aux base de données oracle if laut:
     </p>
     <ol>
-        <li>En se connectant comme administrateur de la base de données, créer l&#39;utilisateur oracle &quot;JCA&quot; avec le not de passe &quot;JCA&quot;. La commande est: create user JCA identified by JCA;</li>
-        <li>Donner à l&#39;utilisateur la permission de créer des tables dans son propre shéma. La commande est : grant create table to JCA;</li>
-        <li>Donner à l&#39;utilisateur la permission de se connecter, la commande est : grant create session to JCA;</li>
-        <li>Si l&#39;instance de oracle n&#39;a janaus eté configurée au niveau du &quot;tablespace&quot; il faut <a href="Tablespace.html" >
-            configurer le &quot;tablespace&quot;</a>. Pour savoir si c&#39;est fait faire l&#39;étape de création de table qui suit celle-ci et si on a une erreur de &quot;tablespace&quot; le table space n&#39;est pas configuré. Voici un exemple de message d&#39;erreur : ORA-01950: no privileges on tablespace &#39;SYSTEM&#39;</li>
-        <li>Se reconnecter à la base de données avec l&#39;utilisateur JCA et le mot de passe JCA et créer les tables nécissaires aux essais.</li>
+        <li>En se connectant comme administrateur de la base de données, créer l&#39;utilisateur oracle &quot;JCA&quot; 
+            avec le not de passe &quot;JCA&quot;. La commande est: 
+            <blockquote>create user JCA identified by JCA;</blockquote></li>
+        <li>Donner à l&#39;utilisateur la permission de créer des tables dans son propre shéma. 
+            La commande est : <blockquote>grant create table to JCA;</blockquote></li>
+        <li>Donner à l&#39;utilisateur la permission de se connecter, 
+            la commande est : 
+            <blockquote>grant create session to JCA;</blockquote></li>
+        <li>L&#39;instance par défaut de oracle express 11 g comporte un tablespace USERS déjà défini pour les tables utilisateur. 
+            Si vousutilisez une instance oracle avec le tablespace USERS défini, l&#39;assigner comme tablespace par défaut 
+            pour l&#39;utilisateur JCA avec la commande :
+            <blockquote>alter user JCA default tablespace USERS;</blockquote>
+        </li>
+        <li>&nbsp;Se reconnecter à la base de données avec l&#39;utilisateur JCA et le mot de passe JCA et créer les tables nécissaires aux essais.</li>
     </ol>
     <h2>Commandes pour créer les tables</h2>
     <table>
         <tr>
             <td>
+                CREATE TABLE JCAUSER(<br>
+ LOGON VARCHAR2(20) NOT NULL PRIMARY KEY,<br>
+ NOM VARCHAR2(60) NOT NULL<br>
+);<br>
 
             </td>
         </td>
