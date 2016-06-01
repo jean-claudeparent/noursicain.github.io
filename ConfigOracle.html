@@ -32,12 +32,14 @@
     <table>
         <tr>
             <td>
-                CREATE TABLE JCAUSER(<br>
- LOGON VARCHAR2(20) NOT NULL PRIMARY KEY,<br>
- NOM VARCHAR2(60) NOT NULL<br>
-);<br>
-
-            </td>
+                DROP TABLE JCAUSER;
+                <br />
+                CREATE TABLE JCAUSER(<br />
+&nbsp;LOGON VARCHAR2(20) NOT NULL PRIMARY KEY,<br />
+&nbsp;NOM VARCHAR2(60) NOT NULL,<br />
+&nbsp;INFO VARCHAR2(4000),<br />
+&nbsp;XMLINFO CLOB,<br />
+&nbsp;PDFINFO BLOB );</td>
         </td>
     </table>
 </body>

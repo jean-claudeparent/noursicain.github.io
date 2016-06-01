@@ -27,7 +27,7 @@
 &LT;?xml version="1.0" encoding="UTF-8"?&GT;<BR>
 &LT;ListeDeVariables&GT;<BR>
   &nbsp;&nbsp;&LT;Variable Cle="User" Valeur="JCAUser" /&GT;<BR>
-  &nbsp;&nbsp;&LT;Variable Cle="Chemin" Valeur="D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\" /&GT;<BR>
+  &nbsp;&nbsp;&LT;Variable Cle="Chemin" Valeur="D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau" /&GT;<BR>
   &nbsp;&nbsp;&LT;Variable Cle="JCA.FichierDeVariables" Valeur="D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\Var.xml" /&GT;<BR>
 
   &LT;/&LT;ListeDeVariables&GT;<BR>
@@ -35,15 +35,12 @@
         </TR>
 
         </TABLE>
-    <p>Voici un fichier de modèle SQL qui sera utilisés pour créer un script SQL Oracle 11g pour créer un environnement de test pour&nbsp; un user.
+    <p>Voici un fichier de modèle SQL qui sera utilisés pour créer un script SQL Oracle 11g pour insérer une rangée de données dans une des tables de test de JCAssertion.
     </p>
     <TABLE>
         <TR>
             <TD>
-create or replace table {{User}}.JCAUser(User VARCHAR2(20) NOT NULL PRIMARY KEY,<BR>
-                NOM VARCHAR2(100));
-                <br />
-                insert into JCAUser values({{User}}&#39;&#39;,&#39;Nom test&#39;);<br />
+                insert into JCAUser(logon,nom,info) values(&#39;{{User}}&#39;,&#39;Test&#39;,&#39;fichier:{{JCA.FichierDeVariables}}&#39;); <br />
                 commit;</TD>
         </TR>
 
@@ -59,9 +56,8 @@ create or replace table {{User}}.JCAUser(User VARCHAR2(20) NOT NULL PRIMARY KEY,
                 &nbsp;&nbsp;&lt;Type&gt;SubstituerVariablesFichier&lt;/Type&gt;<br />
                 &nbsp;&nbsp;&lt;FichierModele&gt;{{Chemin}}\ModeleSQL.sql&lt;/FichierModele&gt;<br />
                 &nbsp;&nbsp;&lt;FichierSortie&gt;{{Chemin}}\{{User}}monSQL.sql\&lt;/FichierSortie&gt;<br />
-                &nbsp;&nbsp;&lt;FichierVariables&gt;{{JCA.FichierDeVariables}\&lt;/FichierVariables&gt;<br />
-                &lt;/Assertion&gt;</TD>
-        </TR>
+                &nbsp;&nbsp;&lt;F&nbsp;&nbsp;&lt;FichierVariables&gt;{{JCA.FichierDeVariables}&lt;/FichierVariables&gt;<br />
+                &lt;/Assertion&gt;TR>
 
         </TABLE>
 
@@ -72,11 +68,21 @@ create or replace table {{User}}.JCAUser(User VARCHAR2(20) NOT NULL PRIMARY KEY,
             <TD>
                 &nbsp;&lt;Assertion&gt;<br />
                 &nbsp;&nbsp;&lt;Description&gt;Créer un fichier sql pour un logon en particuler. &lt;/Description&gt;<br />
-                &nbsp;&nbsp;&lt;Type&gt;SubstituerVariablesFichier&lt;/Type&gt;<br />
-                &nbsp;&nbsp;&lt;FichierModele&gt;ModeleSQL.sql&lt;/FichierModele&gt;<br />
-                &nbsp;&nbsp;&lt;FichierSortie&gt;{{Chemin}}\{{User}}monSQL.sql\&lt;/FichierSortie&gt;<br />
-                &nbsp;&nbsp;&lt;FichierVariables&gt;{{JCA.FichierDeVariables}\&lt;/FichierVariables&gt;<br />
-                &lt;/Assertion&gt;</TD>
+                &nbsp;&nbsp;&lt;T&nbsp;&nbsp;&lt;Type&gt;SubstituerVariablesFichier&lt;/Type&gt;<br />
+                &nbsp;&nbsp;&lt;FichierModele&gt;D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\ModeleSQL.sql&lt;/FichierModele&gt;<br />
+                &nbsp;&nbsp;&lt;FichierSortie&gt;D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\JCAUsermonSQL.sql\&lt;/FichierSortie&gt;<br />
+                &nbsp;&nbsp;&lt;FichierVariables&gt;D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\Var.xml&lt;/FichierVariables&gt;<br />
+                &lt;/Assertion&gt;TR>
+
+        </TABLE>
+    <p>Lorsque l&#39;assertion SubstituerVariablesFichier est ébaluée, elle met le contenu suivant dans le fichier
+         D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\JCAUsermonSQL.sql :
+        </p>
+    <TABLE>
+        <TR>
+            <TD>
+                insert into JCAUser(logon,nom,info) values(&#39;JCAUser&#39;,&#39;Test&#39;,&#39;fichier:D:\DevCenter\Test\Dev\Systeme\JCAssertion\Use Case 1\Resultat\Nouveau\Var.xml&#39;); <br />
+                commit;</TD>
         </TR>
 
         </TABLE>
