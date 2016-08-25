@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>ConnectionOracle</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>ConnectionOracle</h1>
+<h2>Description</h2>
+<p>ConnectionOracle permet de spécifier l&#39;information de base pour ouvrir une connection à une base de données oracle. Cette assertion permet aussi d&#39;ouvrir immédiatement la connection si la base de données sera utilisée beaucoup et de fermer la connection lorsque l&#39;on a terminé. Cette connection est faite en utilisant le data oracle provider pour .net.</p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Action</TD>
+        <TD>Non</TD>
+        <TD>&quot;Ouvrir&quot; ouvre immédiatement la connection à la vase de données.<br />
+            &quot;Fermer&quot; ferme la connection à la base de données.</TD>
+    </TR>
+        <TR>
+        <TD>Password</TD>
+        <TD>Oui</TD>
+        <TD>Spécifie le mot de passe à utiliser pour se connecter à la base de données Oracle.<br />
+            </TD>
+    </TR>    <TR>
+        <TD>Serveur</TD>
+        <TD>Non</TD>
+        <TD>Spécifie le serveur oule nom de l&#39;instance oracle où l&#39;on doit se connecter. Par défaut c&#39;est l&#39;instance oracle par défaut installée sur l&#39;ordinateur qui exécute JCAssertion.</TD>
+    </TR>    <TR>
+        <TD>User</TD>
+        <TD>Oui</TD>
+        <TD>Spécifie le cômpte d&#39;utilisateur&nbsp; à utiliser pour se connecter à la base de données Oracle.<br />
+            </TD>
+    </TR>
+        
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Ouvrir la connection à la base de données. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;ConnectionOracle&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;User&gt;JCA&lt;/User&gt;<br>
+    &nbsp;&nbsp;&lt;Password&gt;{{motdepasse}}&lt;/Password&gt;<br>
+        &nbsp;&nbsp;&lt;Serveur&gt;{{mdevserveur}}&lt;/Serveur&gt;<br>
+        &nbsp;&nbsp;&lt;Action&gt;Ouvrir&lt;/Action&gt;<br>
+        &nbsp;&nbsp;&lt;/Assertion&gt;<br>
+    
+    </p>
+</body>
+</html>
