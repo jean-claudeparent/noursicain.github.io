@@ -26,21 +26,11 @@
             pour l&#39;utilisateur JCA avec la commande :
             <blockquote>alter user JCA default tablespace USERS;</blockquote>
         </li>
-        <li>&nbsp;Se reconnecter à la base de données avec l&#39;utilisateur JCA et le mot de passe JCA et créer les tables nécissaires aux essais.</li>
+        <li>&nbsp;Se reconnecter à la base de données avec l&#39;utilisateur JCA et le mot de passe JCA et créer les tables et les
+             données& nécissaires aux essais. 
+            <a href="TablesOracle.txt">Un script pouvant être exécuté dans SQL Plus est dispomible en cliquant ici</a></li>
     </ol>
-    <h2>Commandes pour créer les tables</h2>
-    <table>
-        <tr>
-            <td>
-                DROP TABLE JCAUSER;
-                <br />
-                CREATE TABLE JCAUSER(<br />
-&nbsp;LOGON VARCHAR2(20) NOT NULL PRIMARY KEY,<br />
-&nbsp;NOM VARCHAR2(60) NOT NULL,<br />
-&nbsp;INFO VARCHAR2(4000),<br />
-&nbsp;XMLINFO CLOB,<br />
-&nbsp;PDFINFO BLOB );</td>
-        </td>
-    </table>
+    
+    
 </body>
 </html>
