@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>AssertSQL</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>AssertSQL</h1>
+<h2>Description</h2>
+<p>AssertSQL permet de définir une assertion à tester. L&#39;assertion est composée d&#39;une commande SQL qui retourne une seule colonne et une seule rangée. Cette valeur est comparée à un résultat attendu.
+    Un opérateur de comparaison est permis si la valeur attendue est un nombre. Si la commande SQL ne retourne aucune rangée ou si le résultat est null l&#39;assertion est considérée comme fausse. Une assertion ConnectionOracle doit avoir réussi avant que AssertSQL puisse être utilisé.</p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>AttenduNombre</TD>
+        <TD>Obligatoire sauf si AttenduTexte est utilisé.</TD>
+        <TD>Définit le résultat numérique attendu dans l&#39;assertion.</TD>
+    </TR>
+    <TR>
+        <TD>AttenduTexte</TD>
+        <TD>Obligatoire sauf si AttenduNombre est utilisé.</TD>
+        <TD>Définit le résultat texte (chaîne de caractère) attendu dans l&#39;assertion.</TD>
+    </TR>
+    <TR>
+        <TD>AttenduNombre</TD>
+        <TD>Obligatoire sauf si AttenduTexte est utilisé.</TD>
+        <TD>Définit le résultat numérique attendu dans l&#39;assertion.</TD>
+    </TR>
+    <TR>
+        <TD>MessageEchec</TD>
+        <TD>Non.</TD>
+        <TD>Texte qui explique les conséquences du fait que l&#39;assertion est fausse. Par exemple &quot;L&#39;utilisateur n&#39;a pas été crée dans la table TableUtil dans la base de données&quot;.</TD>
+    </TR>
+    <TR>
+        <TD>Operateur</TD>
+        <TD>Non</TD>
+        <TD>Définit l&#39;opérateur logique à utiliser pour comparer le résultat de l&#39;énoncé SQL et le résultat attendu. Si non spécifié, &quot;est`égal&quot; est pris comme valeur par défaut. L&#39;opérateur est pris en compte juste pour les résultats attendus qui sont des nombres. Voir le tableau plus bas pour les valeurs valides d&#39;opérateur.</TD>
+    </TR>
+     <TR>
+        <TD>SQL</TD>
+        <TD>Oui</TD>
+        <TD>Définit l&#39;énoncé SQL qui donnera le résultat à comparer. L&#39;énoncé SQL doit retourner une seule valeur et une seule rangée. Ne pas mettre de &quot;;&quot; à la fin de la commande SQL. On peut faire des enter dans la commande SQL pour qu&#39;elle soit plus lisible.</TD>
+    </TR>
+</TABLE>
+    <p>Liste des opérateurs:</p>
+    <TABLE>
+    <TR>
+        <TH>Code d'opérateur</TH>
+        <TH>Signification (l&#39;assertion est vraie si)</TH>
+        
+    </TR>
+        <TR>
+        <TD>=&nbsp;</TD>
+        <TD>Le résultat de l&#39;énoncé SQL est égal à la valeur attendue. </TD>
+        
+    </TR>
+        <TR>
+        <TD>!=</TD>
+        <TD>Le résultat de l&#39;énoncé SQL est différent de la valeur attendue.</TD>
+        
+    </TR>
+        <TR>
+        <TD>pg</TD>
+        <TD>Le résultat de l&#39;énoncé SQL est plus grand que la valeur attendue.</TD>
+        
+    </TR>
+<TR>
+        <TD>pp</TD>
+        <TD>Le résultat de l&#39;énoncé SQL est plus petit que la valeur attendue.</TD>
+        
+    </TR>
+<TR>
+        <TD>pg=</TD>
+        <TD>Le résultat de l&#39;énoncé SQL est plus grand ou égal à la valeur attendue.</TD>
+        
+    </TR>
+<TR>
+        <TD>pp=</TD>
+        <TD>Le résultat de l&#39;énoncé SQL est plus petit ou égal à la valeur attendue.</TD>
+        
+    </TR>
+
+
+
+    </TABLE>
+<h2>Exemple</h2>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Vérifier que le solde du client est positif après paiementr. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;AssertSQL&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;SQL&gt;select solde<br>
+    from TableClient<br>
+    where NoClint = &#39;00001&#39;&lt;/SQL&gt;<br>
+    &nbsp;&nbsp;&lt;Operateur&gt;pg=&lt;/Operateur&gt;<br>
+    &nbsp;&nbsp;&lt;AttenduNombre&gt;0&lt;/AttenduNombre&gt;<br>
+         &nbsp;&nbsp;&lt;MessageEchec&gt;Apr`s que le paiement soit passé, le solde devrait ne plus être négatif.&lt;/MessageEchec&gt;<br>
+   
+        &lt;/Assertion&gt;<br>
+    </p>
+</body>
+</html>
