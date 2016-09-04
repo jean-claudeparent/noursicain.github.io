@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
 
     <loc>http://www.jcassertion.org/index.html</loc>
-    <lasmod>2016-08-30</lasmod>
+    <lasmod>2016-09-03</lasmod>
     <priority>1</priority>
  
  </url>
@@ -99,5 +99,71 @@
     <lasmod>2016-08-30</lasmod>
  
  </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/AssertSQL.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/Balises.html</loc>
+    <lasmod>2016-08-30</lasmod>
+     <priority>0.6</priority>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/ConnectionOracle.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/ContenuFichier.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/ExecuteProgramme.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/FichierExiste.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/MAJVariables.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/RefXML.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/SubstituerVariablesFichier.html</loc>
+    <lasmod>2016-08-30</lasmod>
+ 
+ </url>
+
+
 
 </urlset>
