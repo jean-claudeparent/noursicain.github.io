@@ -12,8 +12,8 @@
 <body>
 <h1>SQLExecute</h1>
 <h2>Description</h2>
-<p>SQLExecute permet d'excéuter des commandes SQL qui  modifient la base de données. On ne peutdonc pas faire de select avec cette commande.
-La mofication se fait sur la base de données définie avec la balise ConnectionOracle.
+<p>SQLExecute permet d'exécuter des commandes SQL qui  modifient la base de données. On ne peutdonc pas faire de select avec cette commande.
+La modification se fait sur la base de données définie avec la balise ConnectionOracle.
 Cette assertion est vraie sauf si la commande SQL provoque une erreur oracle.
  </p>
 <h2>Balises</h2>
@@ -28,7 +28,7 @@ Cette assertion est vraie sauf si la commande SQL provoque une erreur oracle.
         <TD>SQL</TD>
         <TD>Obligatoire</TD>
         <TD>Commande SQL de modification de base de données à exécuter. Il peuut y avoir plus
-d'une balise SQL. Ne pas mettre de &quot;;&quot; à la fin de la commande.</TD>
+d'une balise SQL. Ne pas mettre de &quot;;&quot; à la fin de la commande. Attention en saisissant les commandes SQL dans le fichier XML. Un plus grand ou un plus petit doivent être remplacés par leur équivalent xml. &lt; remplacé par &quot;&amp;lt;&quot; et &gt; par &quot;&amp;gt;&quot;.</TD>
     </TR>
 </TABLE>
 
