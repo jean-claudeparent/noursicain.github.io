@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>SQLExecute</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>SQLExecute</h1>
+<h2>Description</h2>
+<p>SQLExecute permet d'excéuter des commandes SQL qui  modifient la base de données. On ne peutdonc pas faire de select avec cette commande.
+La mofication se fait sur la base de données définie avec la balise ConnectionOracle.
+Cette assertion est vraie sauf si la commande SQL provoque une erreur oracle.
+ </p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>SQL</TD>
+        <TD>Obligatoire</TD>
+        <TD>Commande SQL de modification de base de données à exécuter. Il peuut y avoir plus
+d'une balise SQL. Ne pas mettre de &quot;;&quot; à la fin de la commande.</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>
+&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Modifier une table. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;SQLExecute&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;SQL&gt;delete from JCATest&lt;/SQL&gt;<br>
+    &nbsp;&nbsp;&lt;SQL&gt;update JCATest set info = &#39;test&#39;&lt;/SQL&gt;<br>
+        &nbsp;&nbsp;&lt;/Assertion&gt;<br>
+    </p>
+</body>
+</html>
