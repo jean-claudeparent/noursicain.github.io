@@ -117,6 +117,13 @@
 
 <url>
 
+    <loc>http://www.jcassertion.org/RefXML/ChargeLOB.html</loc>
+    <lastmod>2017-01-15</lastmod>
+ 
+ </url>
+
+<url>
+
     <loc>http://www.jcassertion.org/RefXML/ConnectionOracle.html</loc>
     <lastmod>2016-08-30</lastmod>
  
@@ -153,7 +160,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/RefXML/RefXML.html</loc>
-    <lastmod>2016-10-26</lastmod>
+    <lastmod>2017-01-15</lastmod>
  
  </url>
 
@@ -169,6 +176,10 @@
     <lastmod>2016-10-26</lastmod>
  
  </url>
+
+
+
+
 
 
 
