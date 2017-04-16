@@ -15,9 +15,20 @@
 <p>Pour exécuter les essais de JCAssertion pour la partie accès aux base de données oracle if laut:
     </p>
     <ol>
-        <li>En se connectant comme administrateur de la base de données, créer l&#39;utilisateur oracle &quot;JCA&quot; 
-            avec le not de passe &quot;JCA&quot;. La commande est: 
-            <blockquote>create user JCA identified by JCA;</blockquote></li>
+        <li>Se connecter comme administrateur de la base de données,</li>
+        <li>Si il est acceptable que votreinstance oracle ait un niveau moindre de sécurité afin de faciliter son
+            administration enlever les options qui concernent l&#39;utilisation des mots de passe. La commande est :,
+            <blockquote>ALTER PROFILE DEFAULT LIMIT COMPOSITE_LIMIT UNLIMITED<br>
+                 PASSWORD_LIFE_TIME UNLIMITED<br>
+                 PASSWORD_REUSE_TIME UNLIMITED<br>
+                 PASSWORD_REUSE_MAX UNLIMITED<br>
+                 PASSWORD_VERIFY_FUNCTION NULL <br>
+                PASSWORD_LOCK_TIME UNLIMITED<br>
+                 PASSWORD_GRACE_TIME UNLIMITED<br>
+                 FAILED_LOGIN_ATTEMPTS UNLIMITED;</blockquote>
+        </li>
+        <li>Créer l&#39;utilisateur oracle &quot;JCA&quot; 
+            avec le not de passe &quot;JCA&quot;. La commande est: <blockquote>create user JCA identified by JCA;</blockquote></li>
         <li>Donner à l&#39;utilisateur la permission de créer des tables dans son propre shéma. 
             La commande est : <blockquote>grant create table to JCA;</blockquote></li>
         <li>Donner à l&#39;utilisateur la permission de se connecter, 

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>ChargeLOB</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>ChargeLOB</h1>
+<h2>Description</h2>
+<p>ChargeLOB&nbsp; permet de charger le contenu d&#39;un fichier dans une colonne de type CLOB ou BLOB dans une table oracle. Une ou plusieurs rangées peuvent recevoir le contenu du fichier et la ou les rangées doivent exister dans la table oraacle avant le chargement. Cette assertion est vraie sauf lorsqu&#39;une erreur technique est rencontrée.
+    </p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Fichier</TD>
+        <TD>Obligatoire</TD>
+        <TD>Nom du ffichier dont le contenu sera mis dans la base de données. </TD>
+    </TR>
+    <TR>
+        <TD>SQL</TD>
+        <TD>Obligatoire</TD>
+        <TD>Commende SQL représentant la sélection des rangées qui serons modifiées. Voir la section plus bas.</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Charger un jpeg dans plusieurs rangées. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;ChargeLOB&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Fichier&gt;{{Chemin}}test.jpeg&lt;/Fichier&gt;<br>
+    &nbsp;&nbsp;&lt;SQL&gt;select idcas, typeblob AS BLOB from jcatest where idcas like &#39; {{clepartielle}}&#39;&lt;/SQL&gt;<br>
+        &lt;/Assertion&gt;<br>
+    </p>
+
+    <h2>Détails sur la balise SQL</h2>
+    <p>La balise SQL contient&nbsp; un instruction SQL qui définit les rangées qui recevrons le contenu du fichier. L'énoncé SQL doit remplir les 
+        conditions suivantes:
+        <ul>
+            <li>débuter par l'instruction select</li>
+            <li>spécifier toutes les colonnes qui font partie de la clé primaire de la table</li>
+            <li>spécifier la colonne de type BLOB ou CLOB à remplir avec le contenu du fichier. Cette colonne doit être
+                identifiée par un des deux alias suivant en majuscules "AS BLOB" ou "AS CLOB"
+                . &quot;AS BLOB&quot; est utilisé pour un contenu binaire qui doit être chargé sans interprétation ou modification. &quot;AS CLOB&quot; est utilisé pour faire lire correctement un fichier texte qui peut avoir des encodages variées et le sauvegarder correctement sur la base de données.</li>
+            <li>Continuer avec une clause FROM avec un seul nom de table.</li>
+        </li>
+        <li>Optionnellement terminer avec une clause
+            where qui choisit les rangées à modifier.&nbsp; Si la clause contient un
+            &lt; il faut remplacer ce caractère par l'équivalent 
+            &amp;lt;</li>
+        </ul>
+    </p>
+    <p>Exemples</p>
+    <ul>
+
+        <li>select NoClient, Photo AS BLOB from Client where NoClient = 2456
+        </li>
+        <li>select NoClient,NoFacture,Rapport AS CLOB from Client where NoClient = 2456 and NoFacture &gt; 33
+        </li>
+        <li>select NoClient,NoFacture,Rapport AS CLOB from Client where NoClient = 2456 and NoFacture &amp;lt; 33
+        </li>
+    </ul>
+</body>
+</html>

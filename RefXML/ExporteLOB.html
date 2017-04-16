@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>ExporteLOB</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>ExporteLOB</h1>
+<h2>Description</h2>
+<p>ExporteLOB permet d&#39;exporter dans des fichiers des colonnes de type CLOB ou BLOB. Plusieurs rangées de la table à exporter peuvent être traitées en une seule assertion. Si une colonne CLOB est exportée le fichier est de type texte et on peut choisir entre deux encodages. L&#39;encodage par défaut est le UTF-8.
+    </p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Chemin</TD>
+        <TD>Obligatoire</TD>
+        <TD>Le chemin du répertoire où les fichiers serons déposés.</TD>
+    </TR>
+    <TR>
+        <TD>Encodage</TD>
+        <TD>Non obligatoire</TD>
+        <TD>Détermine l&#39;encodage lorsqu&#39;un fichier texte est produit. Si on mets &quot;ascii&quot; le fichier est encodé en ascii. Toute autre valeur ou l&#39;absence de la balise crée des fichiers encodés en UTF-8. Ascii marche sans tenir compte des majuscules ou minuscules, par exemple ces deux formes sont valides: &quot;Ascii&quot; ou &quot;ASCII&quot;.</TD>
+    </TR>
+    <TR>
+        <TD>SQL</TD>
+        <TD>Obligatoire&nbsp; </TD>
+        <TD>Commande SQL définissant les rangées à exporter, la colonne exporter et le nom des fichiers qui seront créés Voir section plus bas dans cette page.</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>&nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Exporter une colonne CLOB en fichier ascii &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;ExporteLOB&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Encodage&gt;Ascii&lt;/Encodage&gt;<br>
+        &nbsp;&nbsp;&lt;Chemin&gt;D:\test\&lt;/Chemin&gt;<br>
+    &nbsp;&nbsp;&lt;SQL&gt;select idcas||&#39;.txt&#39; as NOM, typeClob AS CLOB from jcatest where idcas like &#39; {{clepartielle}}&#39;&lt;/SQL&gt;<br>
+        &lt;/Assertion&gt;<br>
+    </p>
+
+    <h2>Détails sur la balise SQL</h2>
+    <p>La balise SQL contient&nbsp; une instruction SQL qui définit les rangées dont le contenu sera exporté dans des fichiers. On peut exporter seulement une colonne LOB par assertion ExporteLOB. L'énoncé SQL doit remplir les 
+        conditions suivantes:
+        <ul>
+            <li>débuter par l'instruction select</li>
+            <li>spécifier une colonne qui donnera le nom de fichier pour chaque rangée de la sélection. Cette expression doit être indiquée par l&#39;alias NOM. Cette expression ne doit pas retourner des caractères qui sont invalides dans un nom de fichier comme par exemple &quot;14:23:23&quot; (le : donne un nom de fichier invalide). Si il n&#39;y a aucun alias ou nom de colonne &quot;NOM&quot; la première colonne du select sera utilisée.</li>
+            <li>spécifier la colonne de type BLOB ou CLOB à exporter&nbsp; dans le contenu du fichier. Cette colonne doit être
+                identifiée par un des deux alias suivant en majuscules "AS BLOB" ou "AS CLOB"
+                . &quot;AS BLOB&quot; est utilisé pour un contenu binaire qui doit être exporté sans interprétation ou modification. &quot;AS CLOB&quot; est utilisé pour écrire&nbsp; correctement un fichier texte qui peut avoir des encodages variées.</li>
+            <li>Continuer avec une clause FROM avec un seul nom de table.</li>
+        </li>
+        <li>Optionnellement terminer avec une clause
+            where qui choisit les rangées à exporter.&nbsp; Si la clause contient un
+            &lt; il faut remplacer ce caractère par l'équivalent 
+            &amp;lt;</li>
+        </ul>
+    </p>
+    <p>Exemples</p>
+    <ul>
+
+        <li>select NoClient||&#39;.jpg&#39; as NOM, Photo AS BLOB from Client where NoClient = &#39;C2456&#39;
+        </li>
+        
+    </ul>
+</body>
+</html>

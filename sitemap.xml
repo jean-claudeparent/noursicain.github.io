@@ -11,7 +11,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/Changements.html</loc>
-    <lastmod>2016-10-26</lastmod>
+    <lastmod>2017-04-01</lastmod>
  
  </url>
 
@@ -61,7 +61,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/Installation.html</loc>
-    <lastmod>2016-10-26</lastmod>
+    <lastmod>2017-04-03</lastmod>
  
  </url>
 
@@ -117,6 +117,21 @@
 
 <url>
 
+    <loc>http://www.jcassertion.org/RefXML/ChargeLOB.html</loc>
+    <lastmod>2017-01-15</lastmod>
+ 
+ </url>
+
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/ExporteLOB.html</loc>
+    <lastmod>2017-04-03</lastmod>
+ 
+ </url>
+
+
+<url>
+
     <loc>http://www.jcassertion.org/RefXML/ConnectionOracle.html</loc>
     <lastmod>2016-08-30</lastmod>
  
@@ -153,7 +168,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/RefXML/RefXML.html</loc>
-    <lastmod>2016-10-26</lastmod>
+    <lastmod>2017-04-03</lastmod>
  
  </url>
 
@@ -169,6 +184,10 @@
     <lastmod>2016-10-26</lastmod>
  
  </url>
+
+
+
+
 
 
 
