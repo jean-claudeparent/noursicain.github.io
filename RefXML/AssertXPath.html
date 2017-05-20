@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>AssertXPath</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>AssertXPath</h1>
+<h2>Description</h2>
+<p>ContenuFichier permet de vérifier si un fichier texte contient un ou plusieurs texte et si
+    il ne contient pas un ouplusieurs textes. Typiquement on vérifie
+    que les textes des résultats atendus sont
+    dans le fichier et qu'aucun
+    message d'erreur n'est présent.
+    </p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Contient</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Ne sélectionne que les noeuds qui ont cette chaîne de caractères&nbsp; dans leur texte. Si le noeud est lui-même une structure xml tous les textes la composant sont concaténés avant de rechercher la chaîne. La recherche fait une différence enre les majuscules et les minuscules. Par exemple &#39;test&#39; ne sera pas trouvé dans &#39;Ceci est un TEST&#39;.</TD>
+    </TR>
+    <TR>
+        <TD>ContientMajus</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Comme &#39;Contient&#39;. mais ne tiens pas compte de la différence entre les majuscules et les minuscules. Par exemple &#39;Allo&#39; sera trouvé dans &#39;allo le monde&#39;.</TD>
+    </TR>
+    <TR>
+        <TD>Expression</TD>
+        <TD>Obligatoire</TD>
+        <TD>&nbsp;Expression XPath qui doit sélectionner certains noeuds du fichier XML à traiter.</TD>
+    </TR>
+    <TR>
+        <TD>Fichier</TD>
+        <TD>Obligatoire</TD>
+        <TD>Nom du fichier XML qui sera utilisé pour évaluer l&#39;expression XPath. Comprends le chemin. Le fichier XML doit être bien structuré en xml pour que les fonctions xml du frameword .net puisse le traiter. i le fichier est mal formé l&#39;assertion sera fausse peu importe l&#39;expression XPath. Le fichier ne doit pas être trop gros mais cela dépends des caractéristiques de l&#39;ordinateur qui exécute JCAssertion.</TD>
+    </TR>
+    <TR>
+        <TD>MessageEchec</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Message à véhiculer si l&#39;assertion est fausse. .</TD>
+    </TR>
+    <TR>
+        <TD>Operateur</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Opérateur de comparaison à appliquer sur le résultat réel et le résultat attendu pour évaluer si l&#39;assertion est vraie. Voir les valeurs permises dans le tableau plus bas. Si la balise n&#39;est pas&nbsp; spécifiée la valeur par défaut est &#39;PG&#39; (Valeur réelle plus grande que valeur attendue).</TD>
+    </TR>
+    <TR>
+        <TD>ResultatAttendu</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Valeur à comparer avec le résultat réel pour déterminer si l&#39;assertion est vraie. Doit contenir un nombre entier .</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>
+    </p>
+</body>
+</html>

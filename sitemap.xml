@@ -11,7 +11,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/Changements.html</loc>
-    <lastmod>2017-04-01</lastmod>
+    <lastmod>2017-05-20</lastmod>
  
  </url>
 
@@ -54,14 +54,14 @@
 <url>
 
     <loc>http://www.jcassertion.org/FichierXML.html</loc>
-    <lastmod>2016-08-30</lastmod>
+    <lastmod>2017-05-20</lastmod>
  
  </url>
 
 <url>
 
     <loc>http://www.jcassertion.org/Installation.html</loc>
-    <lastmod>2017-04-03</lastmod>
+    <lastmod>2017-05-18</lastmod>
  
  </url>
 
@@ -168,7 +168,13 @@
 <url>
 
     <loc>http://www.jcassertion.org/RefXML/RefXML.html</loc>
-    <lastmod>2017-04-03</lastmod>
+    <lastmod>2017-05-20</lastmod>
+ 
+ </url>
+<url>
+
+    <loc>http://www.jcassertion.org/RefXML/AssertXPath.html</loc>
+    <lastmod>2017-05-20</lastmod>
  
  </url>
 
