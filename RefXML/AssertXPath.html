@@ -12,7 +12,7 @@
 <body>
 <h1>AssertXPath</h1>
 <h2>Description</h2>
-<p> AssertXPath définit une assertion composée d&#39;une expression XPath retournant un nombre de noeud XXML dans un fichier XML, d&#39;un opérateur et d&#39;un&nbsp; résultat attendu. Cela permet par exemple de vérifier qu&#39;un noeud XML particulier existe dans un fichier XML. Le fichier XML doit petre suffisamment bien formé pour que le moteur XML de .NET puisse le traiter.&nbsp;
+<p> AssertXPath définit une assertion composée d&#39;une expression XPath retournant un nombre de noeud XML dans un fichier XML, d&#39;un opérateur et d&#39;un&nbsp; résultat attendu. Cela permet par exemple de vérifier qu&#39;un noeud XML particulier existe dans un fichier XML. Le fichier XML doit être suffisamment bien formé pour que le moteur XML de .NET puisse le traiter.&nbsp;
     Les expressions XPath sont un concept qui n&#39;est pas spécifique à JCAssertion. Donc l&#39;internet peut vous donner une foule d&#39;information pour créer des expressions XPath
     </p>
 <h2>Balises</h2>
@@ -26,7 +26,7 @@
     <TR>
         <TD>Contient</TD>
         <TD>Non obligatoire</TD>
-        <TD>&nbsp;Ne sélectionne que les noeuds qui ont cette chaîne de caractères&nbsp; dans leur texte. Si le noeud est lui-même une structure xml tous les textes la composant sont concaténés avant de rechercher la chaîne. La recherche fait une différence enre les majuscules et les minuscules. Par exemple &#39;test&#39; ne sera pas trouvé dans &#39;Ceci est un TEST&#39;.</TD>
+        <TD>&nbsp;Ne sélectionne que les noeuds qui ont cette chaîne de caractères&nbsp; dans leur texte. Si le noeud est lui-même une structure xml tous les textes la composant sont concaténés avant de rechercher la chaîne. La recherche fait une différence entre les majuscules et les minuscules. Par exemple &#39;test&#39; ne sera pas trouvé dans &#39;Ceci est un TEST&#39;.</TD>
     </TR>
     <TR>
         <TD>ContientMajus</TD>
@@ -41,7 +41,7 @@
     <TR>
         <TD>Fichier</TD>
         <TD>Obligatoire</TD>
-        <TD>Nom du fichier XML qui sera utilisé pour évaluer l&#39;expression XPath. Comprends le chemin. Le fichier XML doit être bien structuré en xml pour que les fonctions xml du frameword .net puisse le traiter. i le fichier est mal formé l&#39;assertion sera fausse peu importe l&#39;expression XPath. Le fichier ne doit pas être trop gros mais cela dépends des caractéristiques de l&#39;ordinateur qui exécute JCAssertion.</TD>
+        <TD>Nom du fichier XML qui sera utilisé pour évaluer l&#39;expression XPath. Comprends le chemin. Le fichier XML doit être bien structuré en xml pour que les fonctions xml du frameword .net puisse le traiter. Si le fichier est mal formé l&#39;assertion sera fausse peu importe l&#39;expression XPath. Le fichier ne doit pas être trop gros mais cela dépends des caractéristiques de l&#39;ordinateur qui exécute JCAssertion.</TD>
     </TR>
     <TR>
         <TD>MessageEchec</TD>
@@ -56,7 +56,7 @@
     <TR>
         <TD>ResultatAttendu</TD>
         <TD>Non obligatoire</TD>
-        <TD>&nbsp;Valeur à comparer avec le résultat réel pour déterminer si l&#39;assertion est vraie. Doit contenir un nombre entier .</TD>
+        <TD>&nbsp;Valeur à comparer avec le résultat réel pour déterminer si l&#39;assertion est vraie. Doit contenir un nombre entier . Si la balise n&#39;est pas spécifiée, la valeur par défaut est 0.</TD>
     </TR>
 </TABLE>
 
@@ -125,7 +125,7 @@
         </tr>
         <tr>
             <td>&lt;&gt;</td>
-            <td>L&#39;assertion est vraie si le résultat réel n&#39;est pas égal au résultat attendu. Attention cet opérateur doit petre saisi dans le fichier xml par les équivalents soit &quot;&amp;lt;&amp;gt;&quot;. L&#39;utilisatio de &quot;!=&quot; est plus facile.</td>
+            <td>L&#39;assertion est vraie si le résultat réel n&#39;est pas égal au résultat attendu. Attention cet opérateur doit être saisi dans le fichier xml par les équivalents soit &quot;&amp;lt;&amp;gt;&quot;. L&#39;utilisation de &quot;!=&quot; est plus facile.</td>
         </tr>
 
 
@@ -138,7 +138,7 @@
 <dl>
     <dt>//SQL</dt>
     <dd>Sélectionne tous les noeuds SQL peut importe dans quelle branche de l&#39;arborescence XML ils sont situés.</dd>
-    <dt>//Type/title[text()=&#39;AssertSQL&#39;]</dt>
+    <dt>//Type[text()=&#39;AssertSQL&#39;]</dt>
     <dd>Sélectionne tous les noeuds &#39;Type&#39; dont la valeur est égale à &#39;AssertSQL&#39;.</dd>
     
 </dl>
