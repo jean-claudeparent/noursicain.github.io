@@ -12,11 +12,8 @@
 <body>
 <h1>AssertXPath</h1>
 <h2>Description</h2>
-<p>ContenuFichier permet de vérifier si un fichier texte contient un ou plusieurs texte et si
-    il ne contient pas un ouplusieurs textes. Typiquement on vérifie
-    que les textes des résultats atendus sont
-    dans le fichier et qu'aucun
-    message d'erreur n'est présent.
+<p> AssertXPath définit une assertion composée d&#39;une expression XPath retournant un nombre de noeud XXML dans un fichier XML, d&#39;un opérateur et d&#39;un&nbsp; résultat attendu. Cela permet par exemple de vérifier qu&#39;un noeud XML particulier existe dans un fichier XML. Le fichier XML doit petre suffisamment bien formé pour que le moteur XML de .NET puisse le traiter.&nbsp;
+    Les expressions XPath sont un concept qui n&#39;est pas spécifique à JCAssertion. Donc l&#39;internet peut vous donner une foule d&#39;information pour créer des expressions XPath
     </p>
 <h2>Balises</h2>
     
@@ -65,6 +62,56 @@
 
 <h2>Exemple</h2>
     <p>
+        &nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Vérifier si le fichier XML contient certaines informations. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;AssertXPath&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Fichier&gt;{{Log}}.xml&lt;/Fichier&gt;<br>
+    &nbsp;&nbsp;&lt;Contient&gt;Siamois&lt;/Contient&gt;<br>
+    &nbsp;&nbsp;&lt;Operateur&gt;=&lt;/Operateur&gt;<br>
+    &nbsp;&nbsp;&lt;MessageEchec&gt;Erreur&lt;/MessageEchec&gt;<br>
+    &nbsp;&nbsp;&lt;ResultatAttendu&gt;3&lt;/ResultatAttendu&gt;<br>
+    
+  &nbsp;&lt;/Assertion&gt;<br>
     </p>
+
+<h2>Liste des opérateurs</h2>
+<p>
+    Voici la liste des opérateurs pour comparer le résultat réel de l'expression avec le résultat attendu.
+</p>
+    <table>
+        <tr>
+            <th>Operateur</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>=</td>
+            <td>L&#39;assertion est vraie si le résultat réel est égal au résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>PG</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus grand que le résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>Operateur</td>
+            <td>Description</td>
+        </tr>
+        <tr>
+            <td>Operateur</td>
+            <td>Description</td>
+        </tr>
+    </table>
+
+<h2>Exemples d'expressions XPath</h2>
+<p>
+    Les exemples d'expression XPath sont valides pour un fichier d'assertion de JCAssertion.
+</p>
+<dl>
+    <dt>//SQL</dt>
+    <dd>Sélectionne tous les noeuds SQL peut importe dans quelle branche de l&#39;arborescence XML ils sont situés.</dd>
+    <dt>//Type/title[text()=&#39;AssertSQL&#39;]</dt>
+    <dd>Sélectionne tous les noeuds &#39;Type&#39; dont la valeur est égale à &#39;AssertSQL&#39;.</dd>
+    
+</dl>
+
 </body>
 </html>
