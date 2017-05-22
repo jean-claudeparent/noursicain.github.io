@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>AssertXPath</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
+ </head>
+<body>
+<h1>AssertXPath</h1>
+<h2>Description</h2>
+<p> AssertXPath définit une assertion composée d&#39;une expression XPath retournant un nombre de noeud XML dans un fichier XML, d&#39;un opérateur et d&#39;un&nbsp; résultat attendu. Cela permet par exemple de vérifier qu&#39;un noeud XML particulier existe dans un fichier XML. Le fichier XML doit être suffisamment bien formé pour que le moteur XML de .NET puisse le traiter.&nbsp;
+    Les expressions XPath sont un concept qui n&#39;est pas spécifique à JCAssertion. Donc l&#39;internet peut vous donner une foule d&#39;information pour créer des expressions XPath
+    </p>
+<h2>Balises</h2>
+    
+<TABLE>
+    <TR>
+        <TH>Nom</TH>
+        <TH>Obligatoire</TH>
+        <TH>Description</TH>
+    </TR>
+    <TR>
+        <TD>Contient</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Ne sélectionne que les noeuds qui ont cette chaîne de caractères&nbsp; dans leur texte. Si le noeud est lui-même une structure xml tous les textes la composant sont concaténés avant de rechercher la chaîne. La recherche fait une différence entre les majuscules et les minuscules. Par exemple &#39;test&#39; ne sera pas trouvé dans &#39;Ceci est un TEST&#39;.</TD>
+    </TR>
+    <TR>
+        <TD>ContientMajus</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Comme &#39;Contient&#39;. mais ne tiens pas compte de la différence entre les majuscules et les minuscules. Par exemple &#39;Allo&#39; sera trouvé dans &#39;allo le monde&#39;.</TD>
+    </TR>
+    <TR>
+        <TD>Expression</TD>
+        <TD>Obligatoire</TD>
+        <TD>&nbsp;Expression XPath qui doit sélectionner certains noeuds du fichier XML à traiter.</TD>
+    </TR>
+    <TR>
+        <TD>Fichier</TD>
+        <TD>Obligatoire</TD>
+        <TD>Nom du fichier XML qui sera utilisé pour évaluer l&#39;expression XPath. Comprends le chemin. Le fichier XML doit être bien structuré en xml pour que les fonctions xml du frameword .net puisse le traiter. Si le fichier est mal formé l&#39;assertion sera fausse peu importe l&#39;expression XPath. Le fichier ne doit pas être trop gros mais cela dépends des caractéristiques de l&#39;ordinateur qui exécute JCAssertion.</TD>
+    </TR>
+    <TR>
+        <TD>MessageEchec</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Message à véhiculer si l&#39;assertion est fausse. .</TD>
+    </TR>
+    <TR>
+        <TD>Operateur</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Opérateur de comparaison à appliquer sur le résultat réel et le résultat attendu pour évaluer si l&#39;assertion est vraie. Voir les valeurs permises dans le tableau plus bas. Si la balise n&#39;est pas&nbsp; spécifiée la valeur par défaut est &#39;PG&#39; (Valeur réelle plus grande que valeur attendue).</TD>
+    </TR>
+    <TR>
+        <TD>ResultatAttendu</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Valeur à comparer avec le résultat réel pour déterminer si l&#39;assertion est vraie. Doit contenir un nombre entier . Si la balise n&#39;est pas spécifiée, la valeur par défaut est 0.</TD>
+    </TR>
+</TABLE>
+
+<h2>Exemple</h2>
+    <p>
+        &nbsp;&lt;Assertion&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Vérifier si le fichier XML contient certaines informations. &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;AssertXPath&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Fichier&gt;{{Log}}.xml&lt;/Fichier&gt;<br>
+    &nbsp;&nbsp;&lt;Contient&gt;Siamois&lt;/Contient&gt;<br>
+    &nbsp;&nbsp;&lt;Operateur&gt;=&lt;/Operateur&gt;<br>
+    &nbsp;&nbsp;&lt;MessageEchec&gt;Erreur&lt;/MessageEchec&gt;<br>
+    &nbsp;&nbsp;&lt;ResultatAttendu&gt;3&lt;/ResultatAttendu&gt;<br>
+    
+  &nbsp;&lt;/Assertion&gt;<br>
+    </p>
+
+<h2>Liste des opérateurs</h2>
+<p>
+    Voici la liste des opérateurs pour comparer le résultat réel de l'expression avec le résultat attendu.
+</p>
+    <table>
+        <tr>
+            <th>Operateur</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>=</td>
+            <td>L&#39;assertion est vraie si le résultat réel est égal au résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>PG</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus grand que le résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>PP</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus petit que le résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>&gt;</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus grand que le résultat attendu. Attention dans certain cas il faudra remplacer cette valeur dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;gt;. Donc &quot;PG&quot; est plus facile à utiliser.</td>
+        </tr>
+        <tr>
+            <td>&lt;</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus peiti que le résultat attendu. Attention il faudra remplacer cette valeur dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;lt;. Donc &quot;PP&quot; est plus facile à utiliser.</td>
+        </tr>
+        <tr>
+            <td>PG=</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus grand ou égal au résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>PP=</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus petit ou égal au résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>&gt;=</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus grand ou égal au résultat attendu. Attention dans certain cas il faudra remplacer le &quot;&gt;&quot;&nbsp; dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;gt;. Donc &quot;PG=&quot; est plus facile à utiliser.</td>
+        </tr>
+        <tr>
+            <td>&lt;=</td>
+            <td>L&#39;assertion est vraie si le résultat réel est plus peitit ou égal au résultat attendu. Attention il faudra remplacer &quot;&lt;&quot; dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;lt;. Donc &quot;PP=&quot; est plus facile à utiliser.</td>
+        </tr>
+        <tr>
+            <td>!=</td>
+            <td>L&#39;assertion est vraie si le résultat réel n&#39;est pas égal au résultat attendu.</td>
+        </tr>
+        <tr>
+            <td>&lt;&gt;</td>
+            <td>L&#39;assertion est vraie si le résultat réel n&#39;est pas égal au résultat attendu. Attention cet opérateur doit être saisi dans le fichier xml par les équivalents soit &quot;&amp;lt;&amp;gt;&quot;. L&#39;utilisation de &quot;!=&quot; est plus facile.</td>
+        </tr>
+
+
+    </table>
+
+<h2>Exemples d'expressions XPath</h2>
+<p>
+    Les exemples d'expression XPath sont valides pour un fichier d'assertion de JCAssertion.
+</p>
+<dl>
+    <dt>//SQL</dt>
+    <dd>Sélectionne tous les noeuds SQL peut importe dans quelle branche de l&#39;arborescence XML ils sont situés.</dd>
+    <dt>//Type[text()=&#39;AssertSQL&#39;]</dt>
+    <dd>Sélectionne tous les noeuds &#39;Type&#39; dont la valeur est égale à &#39;AssertSQL&#39;.</dd>
+    
+</dl>
+
+</body>
+</html>
