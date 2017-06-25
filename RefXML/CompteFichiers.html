@@ -4,17 +4,15 @@
     <meta name=viewport content="width=device-width,initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>AssertXPath</title>
+  <title>CompteFichiers</title>
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1404.34">
 <LINK REL="stylesheet" TYPE="text/css" HREF="../noursicain.css">
  </head>
 <body>
-<h1>AssertXPath</h1>
+<h1>CompteFichiers</h1>
 <h2>Description</h2>
-<p> AssertXPath définit une assertion composée d&#39;une expression XPath retournant un nombre de noeud XML dans un fichier XML, d&#39;un opérateur et d&#39;un&nbsp; résultat attendu. Cela permet par exemple de vérifier qu&#39;un noeud XML particulier existe dans un fichier XML. Le fichier XML doit être suffisamment bien formé pour que le moteur XML de .NET puisse le traiter.&nbsp;
-    Les expressions XPath sont un concept qui n&#39;est pas spécifique à JCAssertion. Donc l&#39;internet peut vous donner une foule d&#39;information pour créer des expressions XPath
-    </p>
+<p> CompteFichiers compte le nombre de fichiers qui se trouvent dans un répertoire.&nbsp; Seuls les fichiers sont comptés, pas les répertoires. Si le répertoire contient des sous répertoires les fichiers contenus dans les sous répertoires sont comptés. Un pattern de fichiers peut être spécifié comme par exemple &quot;a*.txt&quot;. Seuls les fichiers répondant au pattern serons comptés. Si l&#39;utilisateur qui lance l&#39;essai n&#39;a pas les accès pour lire le contenu des répertoires l&#39;assertion sera fausse. Tout autre erreur technique sera aisso considéré comme donnant une assertion fausse.</p>
 <h2>Balises</h2>
     
 <TABLE>
