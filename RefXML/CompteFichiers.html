@@ -12,7 +12,7 @@
 <body>
 <h1>CompteFichiers</h1>
 <h2>Description</h2>
-<p> CompteFichiers compte le nombre de fichiers qui se trouvent dans un répertoire.&nbsp; Seuls les fichiers sont comptés, pas les répertoires. Si le répertoire contient des sous répertoires les fichiers contenus dans les sous répertoires sont comptés. Un pattern de fichiers peut être spécifié comme par exemple &quot;a*.txt&quot;. Seuls les fichiers répondant au pattern serons comptés. Si l&#39;utilisateur qui lance l&#39;essai n&#39;a pas les accès pour lire le contenu des répertoires l&#39;assertion sera fausse. Tout autre erreur technique sera aisso considéré comme donnant une assertion fausse.</p>
+<p> CompteFichiers compte le nombre de fichiers qui se trouvent dans un répertoire.&nbsp; Seuls les fichiers sont comptés, pas les répertoires. Si le répertoire contient des sous répertoires les fichiers contenus dans les sous répertoires sont comptés. Un pattern de fichiers peut être spécifié comme par exemple &quot;a*.txt&quot;. Seuls les fichiers répondant au pattern serons comptés. Si l&#39;utilisateur qui lance l&#39;essai n&#39;a pas les accès pour lire le contenu des répertoires l&#39;assertion sera fausse. Tout autre erreur technique sera aussi considéré comme donnant une assertion fausse.</p>
 <h2>Balises</h2>
     
 <TABLE>
@@ -21,26 +21,10 @@
         <TH>Obligatoire</TH>
         <TH>Description</TH>
     </TR>
-    <TR>
-        <TD>Contient</TD>
-        <TD>Non obligatoire</TD>
-        <TD>&nbsp;Ne sélectionne que les noeuds qui ont cette chaîne de caractères&nbsp; dans leur texte. Si le noeud est lui-même une structure xml tous les textes la composant sont concaténés avant de rechercher la chaîne. La recherche fait une différence entre les majuscules et les minuscules. Par exemple &#39;test&#39; ne sera pas trouvé dans &#39;Ceci est un TEST&#39;.</TD>
-    </TR>
-    <TR>
-        <TD>ContientMajus</TD>
-        <TD>Non obligatoire</TD>
-        <TD>&nbsp;Comme &#39;Contient&#39;. mais ne tiens pas compte de la différence entre les majuscules et les minuscules. Par exemple &#39;Allo&#39; sera trouvé dans &#39;allo le monde&#39;.</TD>
-    </TR>
-    <TR>
-        <TD>Expression</TD>
-        <TD>Obligatoire</TD>
-        <TD>&nbsp;Expression XPath qui doit sélectionner certains noeuds du fichier XML à traiter.</TD>
-    </TR>
-    <TR>
-        <TD>Fichier</TD>
-        <TD>Obligatoire</TD>
-        <TD>Nom du fichier XML qui sera utilisé pour évaluer l&#39;expression XPath. Comprends le chemin. Le fichier XML doit être bien structuré en xml pour que les fonctions xml du frameword .net puisse le traiter. Si le fichier est mal formé l&#39;assertion sera fausse peu importe l&#39;expression XPath. Le fichier ne doit pas être trop gros mais cela dépends des caractéristiques de l&#39;ordinateur qui exécute JCAssertion.</TD>
-    </TR>
+    
+    
+    
+    
     <TR>
         <TD>MessageEchec</TD>
         <TD>Non obligatoire</TD>
@@ -53,6 +37,16 @@
             si l&#39;assertion est vraie. Voir les 
             <A href="OperateursNumeriques.html">les opérateurs de comparaison numériques</A>
             . Si la balise n&#39;est pas&nbsp; spécifiée la valeur par défaut est &#39;PG&#39; (Valeur réelle plus grande que valeur attendue).</TD>
+    </TR>
+     <TR>
+        <TD>Pattern</TD>
+        <TD>Non obligatoire</TD>
+        <TD>Pattern des fichiers à compter. Par exemple &quot;a*.txt&quot; comptera tous les fichiers dont le nom commence par &quot;a&quot; et dont l&#39;extention est &quot;.txt&quot;. Windos ne fait pas de distinction entre les majuscues et les minuscules. Si le pattern n&#39;est pas spécifié sa valeur par défaut est &quot;*.*&quot;. Si un pattern contient des cacractères invalides pour un nom de fichier comme par exemple &quot;:&quot; l&#39;assertion sera considérée comme fausse.</TD>
+    </TR>
+    <TR>
+        <TD>Repertoire</TD>
+        <TD>Non obligatoire</TD>
+        <TD>&nbsp;Valeur à comparer avec le résultat réel pour déterminer si l&#39;assertion est vraie. Doit contenir un nombre entier . Si la balise n&#39;est pas spécifiée, la valeur par défaut est 0.</TD>
     </TR>
     <TR>
         <TD>ResultatAttendu</TD>
