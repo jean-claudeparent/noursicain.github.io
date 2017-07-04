@@ -45,8 +45,8 @@
     </TR>
     <TR>
         <TD>Repertoire</TD>
-        <TD>Non obligatoire</TD>
-        <TD>&nbsp;Valeur à comparer avec le résultat réel pour déterminer si l&#39;assertion est vraie. Doit contenir un nombre entier . Si la balise n&#39;est pas spécifiée, la valeur par défaut est 0.</TD>
+        <TD>Obligatoire</TD>
+        <TD>&nbsp;Répertoire dans lequel on compte les fichiers.</TD>
     </TR>
     <TR>
         <TD>ResultatAttendu</TD>
@@ -58,13 +58,13 @@
 <h2>Exemple</h2>
     <p>
         &nbsp;&lt;Assertion&gt;<br>
-&nbsp;&nbsp;&lt;Description&gt;Vérifier si le fichier XML contient certaines informations. &lt;/Description&gt;<br>
-&nbsp;&nbsp;&lt;Type&gt;AssertXPath&lt;/Type&gt;<br>
-    &nbsp;&nbsp;&lt;Fichier&gt;{{Log}}.xml&lt;/Fichier&gt;<br>
-    &nbsp;&nbsp;&lt;Contient&gt;Siamois&lt;/Contient&gt;<br>
-    &nbsp;&nbsp;&lt;Operateur&gt;=&lt;/Operateur&gt;<br>
-    &nbsp;&nbsp;&lt;MessageEchec&gt;Erreur&lt;/MessageEchec&gt;<br>
-    &nbsp;&nbsp;&lt;ResultatAttendu&gt;3&lt;/ResultatAttendu&gt;<br>
+&nbsp;&nbsp;&lt;Description&gt;Y-a-il plus de 10 fichiers? &lt;/Description&gt;<br>
+&nbsp;&nbsp;&lt;Type&gt;CompteFichiers&lt;/Type&gt;<br>
+    &nbsp;&nbsp;&lt;Repertoire&gt;{{Log}}&lt;/Repertoire&gt;<br>
+    &nbsp;&nbsp;&lt;Pattern&gt;Si*.x*&lt;/Pattern&gt;<br>
+    &nbsp;&nbsp;&lt;Operateur&gt;pg&lt;/Operateur&gt;<br>
+    &nbsp;&nbsp;&lt;MessageEchec&gt;Il n&#39;y a pas 10 fichiers&lt;/MessageEchec&gt;<br>
+    &nbsp;&nbsp;&lt;ResultatAttendu&gt;10&lt;/ResultatAttendu&gt;<br>
     
   &nbsp;&lt;/Assertion&gt;<br>
     </p>
