@@ -51,7 +51,10 @@
     <TR>
         <TD>Operateur</TD>
         <TD>Non obligatoire</TD>
-        <TD>&nbsp;Opérateur de comparaison à appliquer sur le résultat réel et le résultat attendu pour évaluer si l&#39;assertion est vraie. Voir les valeurs permises dans le tableau plus bas. Si la balise n&#39;est pas&nbsp; spécifiée la valeur par défaut est &#39;PG&#39; (Valeur réelle plus grande que valeur attendue).</TD>
+        <TD>&nbsp;Opérateur de comparaison à appliquer sur le résultat réel et le résultat attendu pour évaluer 
+            si l&#39;assertion est vraie. Voir les 
+            <A href="OperateursNumeriques.html">les opérateurs de comparaison numériques</A>
+            . Si la balise n&#39;est pas&nbsp; spécifiée la valeur par défaut est &#39;PG&#39; (Valeur réelle plus grande que valeur attendue).</TD>
     </TR>
     <TR>
         <TD>ResultatAttendu</TD>
@@ -73,63 +76,6 @@
     
   &nbsp;&lt;/Assertion&gt;<br>
     </p>
-
-<h2>Liste des opérateurs</h2>
-<p>
-    Voici la liste des opérateurs pour comparer le résultat réel de l'expression avec le résultat attendu.
-</p>
-    <table>
-        <tr>
-            <th>Operateur</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>=</td>
-            <td>L&#39;assertion est vraie si le résultat réel est égal au résultat attendu.</td>
-        </tr>
-        <tr>
-            <td>PG</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus grand que le résultat attendu.</td>
-        </tr>
-        <tr>
-            <td>PP</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus petit que le résultat attendu.</td>
-        </tr>
-        <tr>
-            <td>&gt;</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus grand que le résultat attendu. Attention dans certain cas il faudra remplacer cette valeur dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;gt;. Donc &quot;PG&quot; est plus facile à utiliser.</td>
-        </tr>
-        <tr>
-            <td>&lt;</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus peiti que le résultat attendu. Attention il faudra remplacer cette valeur dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;lt;. Donc &quot;PP&quot; est plus facile à utiliser.</td>
-        </tr>
-        <tr>
-            <td>PG=</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus grand ou égal au résultat attendu.</td>
-        </tr>
-        <tr>
-            <td>PP=</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus petit ou égal au résultat attendu.</td>
-        </tr>
-        <tr>
-            <td>&gt;=</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus grand ou égal au résultat attendu. Attention dans certain cas il faudra remplacer le &quot;&gt;&quot;&nbsp; dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;gt;. Donc &quot;PG=&quot; est plus facile à utiliser.</td>
-        </tr>
-        <tr>
-            <td>&lt;=</td>
-            <td>L&#39;assertion est vraie si le résultat réel est plus peitit ou égal au résultat attendu. Attention il faudra remplacer &quot;&lt;&quot; dans le fichier XML d&#39;assertion par son équivelent encodé soit &amp;lt;. Donc &quot;PP=&quot; est plus facile à utiliser.</td>
-        </tr>
-        <tr>
-            <td>!=</td>
-            <td>L&#39;assertion est vraie si le résultat réel n&#39;est pas égal au résultat attendu.</td>
-        </tr>
-        <tr>
-            <td>&lt;&gt;</td>
-            <td>L&#39;assertion est vraie si le résultat réel n&#39;est pas égal au résultat attendu. Attention cet opérateur doit être saisi dans le fichier xml par les équivalents soit &quot;&amp;lt;&amp;gt;&quot;. L&#39;utilisation de &quot;!=&quot; est plus facile.</td>
-        </tr>
-
-
-    </table>
 
 <h2>Exemples d'expressions XPath</h2>
 <p>

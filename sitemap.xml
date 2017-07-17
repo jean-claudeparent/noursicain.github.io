@@ -11,7 +11,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/Changements.html</loc>
-    <lastmod>2017-05-20</lastmod>
+    <lastmod>2017-07-07</lastmod>
  
  </url>
 
@@ -26,7 +26,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/ConfigOracle.html</loc>
-    <lastmod>2016-08-30</lastmod>
+    <lastmod>2017-06-10</lastmod>
  
  </url>
 
@@ -61,7 +61,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/Installation.html</loc>
-    <lastmod>2017-05-18</lastmod>
+    <lastmod>2017-07-17</lastmod>
  
  </url>
 
@@ -75,7 +75,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/JCAssertion.html</loc>
-    <lastmod>2016-08-30</lastmod>
+    <lastmod>2017-07-07</lastmod>
  
  </url>
 
@@ -174,7 +174,7 @@
 <url>
 
     <loc>http://www.jcassertion.org/RefXML/AssertXPath.html</loc>
-    <lastmod>2017-05-20</lastmod>
+    <lastmod>2017-06-24</lastmod>
  
  </url>
 
@@ -190,11 +190,11 @@
     <lastmod>2016-10-26</lastmod>
  
  </url>
+<url>
 
-
-
-
-
-
+    <loc>http://www.jcassertion.org/RefXML/OperateursNumeriques.html</loc>
+    <lastmod>2017-06-24</lastmod>
+ 
+ </url>
 
 </urlset>

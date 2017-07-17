@@ -1,0 +1,85 @@
+
+
+body{
+    font: normal 0.8em arial,sans-serif;
+    text-align: left;
+    }
+#globalpanel{padding: 0;margin-left: auto;margin-right: auto;width: 760px;text-align: left;min-width: 760px;}
+
+h1{
+    margin-bottom: 14px;
+    margin-top: 1px;
+    font-size: 1.38em;
+    font-weight: bold; 
+    font-family:verdana,sans-serif; 
+    text-align: center ;
+   }
+
+h2{
+    margin-bottom: 5px;
+   margin-top: 5px;
+   font-size: 1.20em;
+   font-weight: bold; 
+   font-family:verdana,sans-serif;
+   padding-bottom: 6px;
+   padding-top: 10px;
+}
+
+h3{margin-bottom: 5px;margin-top: 1px;font-size: 1em;font-weight: bold; font-family:verdana,sans-serif;}
+h4{margin-bottom: 5px;margin-top: 1px;font: bold 1em Tahoma,sans-serif;color: #A57C30;}
+h5{margin-bottom: 1px;margin-top: 0px;font-size: 0.85em;font-weight: bold;}
+li{margin: 1px 0px 5px 0px;}
+sup{font-size: 0.85em;}
+small{font-size: 0.85em;}
+textarea, input{font: normal 1em arial,sans-serif;}
+hr{border: 0;height: 1px;color: #ACA899;background-color: #ACA899;}
+
+table{border: none  }
+th{border: 1px solid black;
+       text-align: center
+}
+td{border: 1px solid black;
+   padding-left: 12px;
+   padding-right: 12px; 
+   padding-top: 6px;
+   padding-bottom: 6px
+}
+
+
+@media only screen and (max-width:320px)
+{
+   body{font-size : 150%;}
+   h1{
+       font-size : 120%;
+       margin-bottom: 1px;
+        margin-top: 1px;
+   }
+   h2{
+       font-size : 120%;
+       margin-bottom: 1px;
+       
+      }
+   h3{
+       font-size : 120%;
+       margin-bottom: 1px;
+       
+   }
+   h4{
+       font-size : 120%;
+       margin-bottom: 1px;
+       
+   }
+   h5{
+       font-size : 150%;
+       margin-bottom: 1px;
+       
+   }
+
+   li{
+       padding: 120%;  
+       
+          
+   }
+
+}
+
