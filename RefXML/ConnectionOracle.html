@@ -24,8 +24,15 @@
     <TR>
         <TD>Action</TD>
         <TD>Non</TD>
-        <TD>&quot;Ouvrir&quot; ouvre immédiatement la connection à la vase de données.<br />
-            &quot;Fermer&quot; ferme la connection à la base de données.</TD>
+        <TD>&quot;Ouvrir&quot; ouvre immédiatement la connection à la base de données et la laissera ouverte jusqu&#39;à une fermeture explicite.<br />
+            &quot;Fermer&quot; ferme la connection à la base de données.<br />
+            Si aucune action n&#39;est spécifiée la base de données sera ouverte et refermée à chaque assertion qui utilise la banque comme par exemple AsserSQL.</TD>
+    </TR>
+    <TR>
+        <TD>Cache</TD>
+        <TD>Non</TD>
+        <TD>Dès que cette balise est présente et contient au moins un caractère, le user et le password n&#39;apparaîtrons pas dans le journal.<br />
+            Cela permet entre autres, de transmettre à une autre personne le journal sans que cela diffuse les codes d&#39;utilisateurs&nbsp; et mots de passe utilisés pour se connecter à la base de données.</TD>
     </TR>
         <TR>
         <TD>Password</TD>
@@ -53,6 +60,7 @@
     &nbsp;&nbsp;&lt;Password&gt;{{motdepasse}}&lt;/Password&gt;<br>
         &nbsp;&nbsp;&lt;Serveur&gt;{{mdevserveur}}&lt;/Serveur&gt;<br>
         &nbsp;&nbsp;&lt;Action&gt;Ouvrir&lt;/Action&gt;<br>
+        &nbsp;&nbsp;&lt;Cache&gt;x&lt;/Cache&gt;<br>
         &nbsp;&nbsp;&lt;/Assertion&gt;<br>
     
     </p>
