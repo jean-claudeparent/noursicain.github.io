@@ -32,11 +32,7 @@
         <TD>Obligatoire sauf si AttenduNombre est utilisé.</TD>
         <TD>Définit le résultat texte (chaîne de caractère) attendu dans l&#39;assertion.</TD>
     </TR>
-    <TR>
-        <TD>AttenduNombre</TD>
-        <TD>Obligatoire sauf si AttenduTexte est utilisé.</TD>
-        <TD>Définit le résultat numérique attendu dans l&#39;assertion.</TD>
-    </TR>
+   
     <TR>
         <TD>MessageEchec</TD>
         <TD>Non.</TD>
@@ -106,6 +102,13 @@
          &nbsp;&nbsp;&lt;MessageEchec&gt;Apr`s que le paiement soit passé, le solde devrait ne plus être négatif.&lt;/MessageEchec&gt;<br>
    
         &lt;/Assertion&gt;<br>
+    </p>
+    <h2>Autres fonctionnalités</h2>
+    <p>
+        Lorsque cette assertion est évaluée,
+        elle crée automatiquement trois
+        variables. Ces variables sont décrite dans la 
+        <a href="../VariablesAuto.html">page des variables générées automatiquement</a>. Ces variables peubvent être utilisées dans le message d&#39;échec.
     </p>
 </body>
 </html>
