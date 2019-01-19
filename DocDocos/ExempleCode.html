@@ -13,12 +13,13 @@
 <body>
 <h1>DocDocos exemple d'utilisation</h1>
 
+
+<h2>Utilisation simple - C#</h2>
 <p>Dans son utilisationla plus simple on indique à
 la composante quel fichier xml lire
 et dans quel répertoire on
 met les pages du site.
 </p>
-<h2>C#</h2>
 using DocDocos;<br />
 ...<br />
 DocDocosDA Generateur  = <br />
@@ -28,5 +29,22 @@ new DocDocosDA();<br />
 Generateur.FichierXMLDoc = @"c:\monfichier.xml"; <br />
 Generateur.RepertoireSortie = @"c:\mon site"; <br />
 Generateur.GenererHTML(); <br />
+
+
+<h2>Utilisation avec gabarit optionnel - C#</h2>
+<p>On peut spécifier un gabarit dans le constructeur.
+À ce moment les pages générées 
+aurons la même extension
+</p>
+using DocDocos;<br />
+...<br />
+DocDocosDA Generateur  = <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+new DocDocosDA(@"c:\mongabarit.php");<br />
+<br />
+Generateur.FichierXMLDoc = @"c:\monfichier.xml"; <br />
+Generateur.RepertoireSortie = @"c:\mon site"; <br />
+Generateur.GenererHTML(); <br />
+
 </body>
 </html>
