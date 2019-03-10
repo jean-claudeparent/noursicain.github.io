@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8" />
+<title>JCASQLODPCore.JCASQLODPHelper</title>
+</head><body>
+<h1>JCASQLODPCore.JCASQLODPHelper</h1>
+<p><h2>Sommaire</h2><p></p>
+<table border="1">
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.ConvertirByteArray7.html">JCASQLODPCore.JCASQLODPHelper.ConvertirByteArray(System.Object)</a></td>
+   <td>
+            Convertir un objet en Byte Array
+            Le type de l'objet doit avoir une méthode
+            toString() pour que ¸a marche bien.
+            Le seul type vraiemnt sécuritaire à
+            utiliser est Byte[]
+            soit que l'objet est déjàen byte array
+            Les autres types sont semis supportés pour voir ce qui se passe 
+            deans les assertions
+            Les caractères spéciaux des chaîne de caractères
+            peuvent aussi être problématiques.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.ConvertirByteArrayStr8.html">JCASQLODPCore.JCASQLODPHelper.ConvertirByteArrayStr(System.String)</a></td>
+   <td>
+            Encode les string en ascii
+            pour les transformer en byte array
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.EcrireFichierBinaire9.html">JCASQLODPCore.JCASQLODPHelper.EcrireFichierBinaire(System.String,System.Byte[])</a></td>
+   <td>
+            Écrit un fichier binaire
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.EcrireFichierTexte10.html">JCASQLODPCore.JCASQLODPHelper.EcrireFichierTexte(System.String,System.String,System.Text.Encoding)</a></td>
+   <td>
+            Écrit un fichier texte avec le bon encodage.
+            Peut lancer une exception
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.ExploreDataset11.html">JCASQLODPCore.JCASQLODPHelper.ExploreDataset(System.Data.DataSet)</a></td>
+   <td>
+            Cette fonction ne devrait plus être utilisé dans une
+            release car elle sert à débugger
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.ExporteLOB12.html">JCASQLODPCore.JCASQLODPHelper.ExporteLOB(System.Data.DataSet,System.String,System.Text.Encoding,System.String@)</a></td>
+   <td>
+            Exporte les LOB du dataset
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.LireFichierBinaire13.html">JCASQLODPCore.JCASQLODPHelper.LireFichierBinaire(System.String)</a></td>
+   <td>
+            Lire un fichier binaire
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.LireFichierTexte14.html">JCASQLODPCore.JCASQLODPHelper.LireFichierTexte(System.String)</a></td>
+   <td>
+            Lire le contenu d'unfichier texte
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.MAJLOB15.html">JCASQLODPCore.JCASQLODPHelper.MAJLOB(System.Data.DataSet@,System.String)</a></td>
+   <td>
+            Met le contenu d'un fichier dans
+            une des colonnes d'un dataset.
+            Le dataset doit avoir une colonne
+            nommée BLOB ou une colonne nommée CLOAB.
+            Ceci est accompli en mettant un alias de colonne
+            dans la commande SQL qui crée le dataset.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.NomColonne16.html">JCASQLODPCore.JCASQLODPHelper.NomColonne(System.Data.DataRow,System.String)</a></td>
+   <td>
+            NomColonne : retourne la nom de la colonne préfére
+            si elle existe sinon retourner le nom de la première colonne
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.TypeLOB17.html">JCASQLODPCore.JCASQLODPHelper.TypeLOB(System.Data.DataRow)</a></td>
+   <td>
+            Retourne un des alias oracle permis dans une requête
+            sql (BLOB ou CLOB) qio a servi `sélectionner
+            la rangée de données. Cet alias se retrouve comme nom de colonne
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPHelper.ValideFichier18.html">JCASQLODPCore.JCASQLODPHelper.ValideFichier(System.String)</a></td>
+   <td>
+            Validation de bases sur un nom de fichier
+            Lance une exception en cas d'échec de la validation
+            </td>
+</tr></table>
+</p></body></html>

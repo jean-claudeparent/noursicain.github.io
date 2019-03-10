@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8" />
+<title>JCASQLODPCore.JCASQLODPClient</title>
+</head><body>
+<h1>JCASQLODPCore.JCASQLODPClient</h1>
+<p><h2>Sommaire</h2><p>
+            JCASQLODPCore : Classe définissant les propriétés et méthodes
+            pour accéder une base de données oracle avec le oracle data provider.
+            </p>
+<table border="1">
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.AssertSQL1.html">JCASQLODPCore.JCASQLODPClient.AssertSQL(System.String,System.Double,System.String)</a></td>
+   <td>
+             AssertSQL (CommandeSQL,ResultatAttendu): Fait un select 
+            
+             retournant un nombre  
+             sur la connection courante et retourne si
+             la valeur est égale (ou est évaluée avec un autre operateur) au Resultat attendu.
+             Si aucune rangée n'est retournée par le select on 
+             retourne false. 
+             Modifie aussi la propriété DernierResultat
+             </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.AssertSQL2.html">JCASQLODPCore.JCASQLODPClient.AssertSQL(System.String,System.String)</a></td>
+   <td>
+            AssertSQLString (CommandeSQL,ResultatAttendu): Fait un select 
+            retournant un texte  
+            sur la connection courante et retourne si
+            la valeur est égale au Resultat attendu.
+            Si aucune rangée n'est retournée par le select on retourne false
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.ChargeLOB3.html">JCASQLODPCore.JCASQLODPClient.ChargeLOB(System.String,System.String)</a></td>
+   <td>
+            ChargeLOB : Charge un Large object
+            dans toutes les rangées définies
+            par un énoncé SQL.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.CreerConnectionString.html">JCASQLODPCore.JCASQLODPClient.CreerConnectionString</a></td>
+   <td>
+            CreerConnectionString : retourne la chaîne de connection
+            crée à partir des propriétés de la classe. Peut
+            lever une exception.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.ExporteLOB4.html">JCASQLODPCore.JCASQLODPClient.ExporteLOB(System.String,System.String,System.Text.Encoding)</a></td>
+   <td>
+            ExporteLOB : Écrit des colonnes BLOB ou CLOB
+            dans des fichiers.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.FermerConnection.html">JCASQLODPCore.JCASQLODPClient.FermerConnection</a></td>
+   <td>
+            FermerConnection: Ferme la connection à ka vase de dibb.es
+            en utilisant ODP. Peut retourner des exceptions.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.OuvrirConnection.html">JCASQLODPCore.JCASQLODPClient.OuvrirConnection</a></td>
+   <td>
+            OuvrirConnection: Ouvre la connection à ka vase de dibb.es
+            en utilisant ODP. Peut retourner des exceptions.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.Resumer.html">JCASQLODPCore.JCASQLODPClient.Resumer</a></td>
+   <td>
+            Resumer : Resume le datareader dans la propriété Resume
+            Sert à débugger
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.SiConnectionOuverte.html">JCASQLODPCore.JCASQLODPClient.SiConnectionOuverte</a></td>
+   <td>
+            SiConnectionOuverte retourne si la connection est ouverte
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.SQLExecute5.html">JCASQLODPCore.JCASQLODPClient.SQLExecute(System.String)</a></td>
+   <td>
+            SQLExecute: Execute une command SQL qui modifie la base de données
+            sur la connection courante
+            La commande
+            est passé en paramètre.
+            Retourne le nombre de rangées modifiées.
+            </td>
+</tr>
+<tr>
+   <td><a href="JCASQLODPCore.JCASQLODPClient.SQLSelect6.html">JCASQLODPCore.JCASQLODPClient.SQLSelect(System.String)</a></td>
+   <td>
+            SQLSelect: Fait un select sur la connection courante
+            et met le resultat dans monReader. La commande
+            est passé en paramètre.
+            </td>
+</tr></table>
+</p></body></html>
