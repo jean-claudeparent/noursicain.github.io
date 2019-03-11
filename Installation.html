@@ -10,21 +10,54 @@
 <LINK REL="stylesheet" TYPE="text/css" HREF="noursicain.css">
  </head>
 <body>
-<h1>Installation de JCAssertion</h1>
-<p>La version courante de JCAssertion est la version 1.1.0.
-    Elle peut être obtenue en cliquand sur
-    <a href="bin/JCAssertion-bin-v1.1.0.zip">télécharger JCAssertion à partir de ce site</a> ou 
-    <a href="https://github.com/noursicain/JCAssertion/releases">télécharger JCAssertion 
-        à partir de la page de "release" sur Github
-    </a>(nécessite un compte Github gratuit).
-    La page Github permet aussi d&#39;obtenir le code source<p>Une fois le fichier téléchargé, extraire tous les fichiers
-    du dossier compressé et les mettre
-    dans un répertoire comme par exemple:
-    c:outils JCAssertion.
-<p>Assurez-vous d'avoir la configuration requise. Il
-    est toujours bon d'avoir un bon anti virus actif sur votre ordinateur.
+    <h1>Installation de JCAssertion</h1>
+    <p>
+        À partir de la version 2.0.0 JCAssertion
+        est disponible sous forme
+        de nuget. On est cependant capable de
+        l'obtenir sans utiliser
+        un environnement de développement ou un
+        gestionnaire de nuget.
+        La marche à suivre pour installer sans IDE est:
+        <ol>
+            <li>
+                Aller sur nuget gallery à l'adresse:
+                <a href="https://www.nuget.org/packages/org.jcassertion.JCAssertion/">
+                    https://www.nuget.org/packages/org.jcassertion.JCAssertion/
+                </a>
+            </li>
+            <li>
+                Dans la section "Info" cliquez sur "Download package" et sauvegarder le
+                fichier sur votre ordinateur.
 
-<p>
+            </li>
+            <li>
+                Trouvez le fichier sur votre ordinateur, lr nom ressemblera à
+                org.jcassertion.JCAssertion.2.0.0.nupkg. Comme le numéro de version est dans le nom de fichier il pourra
+                être différent du nom écrit plus haut. Renommez le fichier en fichier zip par exemple
+                org.jcassertion.JCAssertion.2.0.0.zip
+            </li>
+            <li>
+                Ouvrez le fichier zip et copiez le contenu du
+                répertoire "content" et du répertoire "lib\met45" dans un répertoire sur votre disque. JCAssertion est maintenant disponible
+                pour être utilisé avec les progrannes en ligne de commande
+                JCAssertion.exe et JCAExport.exe.
+            </li>
+        </ol>
+    <p>Naturellement jcassertion peut être utilisé comme un nuget
+    normal dans un projet visual studio.</p>
+    <p>
+        Le code source de JCAssertion peut
+        être obtenu
+        <a href="https://github.com/noursicain/JCAssertion/releases">
+            en téléchargeant JCAssertion
+            à partir de la page de "release" sur Github
+        </a>(nécessite un compte Github gratuit).
+    <p>
+        Assurez-vous d'avoir la configuration requise. Il
+        est toujours bon d'avoir un bon anti virus actif sur votre ordinateur.
+
+    <p>
 
 </body>
 </html>
