@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>DocDocos exemples d'utilisation</title>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>DocDocos exemple d'utilisation</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1404.34">
+<LINK REL="stylesheet" TYPE="text/css" HREF="jcassertionn.css">
+ </head>
+<body>
+<h1>DocDocos exemple d'utilisation</h1>
+
+
+<h2>Utilisation simple - C#</h2>
+<p>Dans son utilisationla plus simple on indique à
+la composante quel fichier xml lire
+et dans quel répertoire on
+met les pages du site.
+</p>
+using DocDocos;<br />
+...<br />
+DocDocosDA Generateur  = <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+new DocDocosDA();<br />
+<br />
+Generateur.FichierXMLDoc = @"c:\monfichier.xml"; <br />
+Generateur.RepertoireSortie = @"c:\mon site"; <br />
+Generateur.GenererHTML(); <br />
+
+
+<h2>Utilisation avec gabarit optionnel - C#</h2>
+<p>On peut spécifier un gabarit dans le constructeur.
+À ce moment les pages générées 
+aurons la même extension
+</p>
+using DocDocos;<br />
+...<br />
+DocDocosDA Generateur  = <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+new DocDocosDA(@"c:\mongabarit.php");<br />
+<br />
+Generateur.FichierXMLDoc = @"c:\monfichier.xml"; <br />
+Generateur.RepertoireSortie = @"c:\mon site"; <br />
+Generateur.GenererHTML(); <br />
+
+</body>
+</html>
